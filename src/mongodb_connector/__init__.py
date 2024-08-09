@@ -1,1 +1,1 @@
-from mongodb_connect.mongo_crud import *
+from mongodb_connector.mongo_crud import *
