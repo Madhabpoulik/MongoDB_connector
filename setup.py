@@ -1,10 +1,13 @@
 from setuptools import find_packages,setup
 from typing import List
+import os
 
 HYPEN_E_DOT = "-e ."
 
 def get_requirement(file_path:str)->List[str]:
+    print(f"Reading {file_path}")
     requirements = []
+    file_path = os.path.join(os.path.dirname(__file__),file_path)
     with open(file_path) as file_obj:
         requirements = file_obj.readlines()
         requirements = [req.replace("\n","") for req in requirements]
@@ -37,5 +40,6 @@ setup(
     },
     package_dir={"":"src"},
     packages=find_packages(where="src"),
-    install_requires= get_requirement("requirements_dev.txt")
+    install_requires= ["pymongo>=4.0"]
 )
+# MongoDB_connector/requirements_dev.txt
