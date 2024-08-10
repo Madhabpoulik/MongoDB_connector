@@ -14,7 +14,7 @@ class mongo_operation:
         self.client_url=client_url
         self.database_name=database_name
         self.collection_name=collection_name
-       
+        
     def create_mongo_client(self,collection=None):
         client=MongoClient(self.client_url)
         return client
